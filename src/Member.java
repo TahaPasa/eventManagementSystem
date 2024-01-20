@@ -61,7 +61,7 @@ public class Member {
             System.out.println("Event guest: " + event.getGuest());
             System.out.println("Event ID: " + event.getEventID());
         }catch (Exception e){
-            System.out.println("Event not found");
+            System.out.println("Invalid input or event not found");
             return;
         }
     }

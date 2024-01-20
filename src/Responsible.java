@@ -60,7 +60,7 @@ public class Responsible extends Member{
     //manageEvent function with its nullable arguments
     void manageEvent(int eventID, String eventName, String eventDate, List<Member> attendeeList, String guest, String location) {
 
-        try {
+
             Event event = Event.eventList.get(eventID);
 
             if (eventName != null) {
@@ -78,12 +78,28 @@ public class Responsible extends Member{
             if (location != null) {
                 event.setLocation(location);
             }
-        } catch (Exception e) {
-            System.out.println("Event not found");
-            return;
 
 
-        }
+    }
+
+    void manageEvent(int eventID, String eventName, String eventDate, String guest, String location) {
+
+
+            Event event = Event.eventList.get(eventID);
+
+            if (eventName != null) {
+                event.setEventName(eventName);
+            }
+            if (eventDate != null) {
+                event.setEventDate(eventDate);
+            }
+            if (guest != null) {
+                event.setGuest(guest);
+            }
+            if (location != null) {
+                event.setLocation(location);
+            }
+
     }
 
     List<Member> getAttendeeList( int eventID){
