@@ -1,6 +1,6 @@
 # Event Management System
 
-A very basic Java Student Society managing application based on my previous experience at Başkent Computer Society.
+A very basic Java Student Society managing application based on my previous experience at Başkent Computer Society. As I've done for my task in my class "Laboratory of programming: applications in basic programming environments" 
 
 ## Specifications
 
