@@ -1,10 +1,14 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class utils {
-    Scanner scanner = new Scanner(System.in);
+public final class utils {
 
-    public Member authenticate() {
+    private utils() {
+    }
+
+    static Scanner scanner = new Scanner(System.in);
+
+    public static Member authenticate() {
         authenticate: while (true) {
             Member user = new Member();
             System.out.print("Please enter your username: ");
@@ -40,7 +44,7 @@ public class utils {
         }
     }
 
-    public void writeMenu(boolean isResponsible){
+    public static void writeMenu(boolean isResponsible){
         System.out.println("\n" + "------------- Please select an option: -------------");
         System.out.println("1- View my profile");
         System.out.println("2- Update my profile");
@@ -60,7 +64,7 @@ public class utils {
         System.out.println("-1 - Logout"+ "\n" + "-----------------------" + "\n");
     }
 
-    public void callUpdateProfile(Member user){
+    public static void callUpdateProfile(Member user){
 
         String name;
         String surname;
@@ -129,7 +133,7 @@ public class utils {
         user.updateMyProfile(name, surname, studentNumber, phoneNumber, email, username, password);
     }
 
-    public void callShowEvent(Member user){
+    public static void callShowEvent(Member user){
 
             System.out.print("Please enter the event ID: ");
             int eventID = scanner.nextInt();
@@ -138,14 +142,14 @@ public class utils {
 
     }
 
-    public void callRegisterEvent(Member user){
+    public static void callRegisterEvent(Member user){
         System.out.print("Please enter the event ID: ");
         int eventID = scanner.nextInt();
         user.registerEvent(eventID);
         System.out.println("Returning to main menu..."+ "\n");
     }
 
-    public void callCreateEvent(Member user){
+    public static void callCreateEvent(Member user){
 
         System.out.print("Please enter the event name: ");
         String eventName = scanner.nextLine();
@@ -168,7 +172,7 @@ public class utils {
 
     }
 
-    public void callManageEvent(Member user){
+    public static void callManageEvent(Member user){
         scanner.nextLine();
         System.out.print("Please enter the event ID: ");
         int eventID2 = scanner.nextInt();
@@ -204,7 +208,7 @@ public class utils {
         System.out.println("Returning to main menu..."+ "\n");
     }
 
-    public void callBanMember(Member user){
+    public static void callBanMember(Member user){
 
             scanner.nextLine();
             System.out.print("Please enter the username of the member you want to ban: ");
@@ -235,7 +239,7 @@ public class utils {
             }
     }
 
-    public void callSendNotification(Member user){
+    public static void callSendNotification(Member user){
         try {
             System.out.print("Please enter the event ID: ");
             int eventID3 = scanner.nextInt();
@@ -253,7 +257,7 @@ public class utils {
         }
     }
 
-    public void callViewAttendees(Member user){
+    public static void callViewAttendees(Member user){
         try {
             System.out.print("Please enter the event ID: ");
             int eventID4 = scanner.nextInt();
@@ -269,7 +273,7 @@ public class utils {
         }
     }
 
-    public boolean checkDateFormat(String date){
+    public static boolean checkDateFormat(String date){
         if (date.length() != 10){
             System.out.println("Invalid date format");
             return false;

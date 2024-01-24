@@ -1,10 +1,12 @@
+// Authors: Taha Alp Kocyigit
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
 
-        // creating some members
+
 
         Responsible responsible1 = new Responsible("Taha Alp", "Kocyigit", "22096536","123456",
                 "tkoc@outlook.com", "thakcygt", "123456","President");
@@ -13,14 +15,13 @@ public class Main {
                 "esrefece", "123456", false, false);
 
         Member memberData2 = new Member("Utku", "Onur", "456978312", "562500000", "utkus@gmail.com",
-                "uusahin", "123456", false, false);
+                "usahin", "123456", false, false);
 
         wholeApplication : while(true){
             System.out.println("****** Welcome to the Event Management System ******");
-            Member user = new Member();
 
-            utils utils = new utils();
-            user = utils.authenticate();
+
+            Member user = utils.authenticate();
 
 
             utils.writeMenu(user.isResponsible());
@@ -61,16 +62,15 @@ public class Main {
                         if (!user.isResponsible()){
                             System.out.println("Unauthorized access!");
                             System.out.println("Returning to main menu..."+ "\n");
-                            return;
+                            break ;
                         }
                         utils.callCreateEvent(user);
-
                         break;
                     case 9:
                         if (!user.isResponsible()){
                             System.out.println("Unauthorized access!");
                             System.out.println("Returning to main menu..."+ "\n");
-                            return;
+                            break;
                         }
                         utils.callManageEvent(user);
                         break;
@@ -78,7 +78,7 @@ public class Main {
                         if (!user.isResponsible()){
                             System.out.println("Unauthorized access!");
                             System.out.println("Returning to main menu..."+ "\n");
-                            return;
+                            break;
                         }
                         utils.callBanMember(user);
                         break;
@@ -86,7 +86,7 @@ public class Main {
                         if (!user.isResponsible()){
                             System.out.println("Unauthorized access!");
                             System.out.println("Returning to main menu..."+ "\n");
-                            return;
+                            break;
                         }
                         utils.callSendNotification(user);
                         break;
@@ -95,7 +95,7 @@ public class Main {
                         if (!user.isResponsible()){
                             System.out.println("Unauthorized access!");
                             System.out.println("Returning to main menu..."+ "\n");
-                            return;
+                            break;
                         }
                         utils.callViewAttendees(user);
                         break;
