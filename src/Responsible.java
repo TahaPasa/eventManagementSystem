@@ -6,8 +6,10 @@ public class Responsible extends Member{
     public Responsible() {
     }
 
-    public Responsible(String name, String surname, String studentNumber, String joinDate, String phoneNumber, String email, String username, String password, boolean isBanned, String role) {
-        super(name, surname, studentNumber, joinDate, phoneNumber, email, username, password, isBanned, true);
+    public Responsible(String name, String surname, String studentNumber,
+                       String joinDate, String phoneNumber, String email, String username,
+                       String password, boolean isBanned,boolean isResponsible, boolean isSubscribed , String role) {
+        super(name, surname, studentNumber, joinDate, phoneNumber, email, username, password, isBanned,isResponsible,isSubscribed);
         this.role = role;
     }
 

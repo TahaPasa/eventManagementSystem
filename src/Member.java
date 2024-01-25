@@ -52,6 +52,22 @@ public class Member {
         System.out.println("Member successfully created");
     }
 
+    public Member(String name, String surname, String studentNumber, String joinDate, String phoneNumber, String email, String username, String password, boolean isBanned, boolean isResponsible, boolean isSubscribed) {
+        this.name = name;
+        this.surname = surname;
+        this.studentNumber = studentNumber;
+        this.joinDate = joinDate;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.username = username;
+        this.password = password;
+        this.isBanned = isBanned;
+        this.isResponsible = isResponsible;
+        this.isSubscribed = isSubscribed;
+        Member.memberList.add(this);
+        System.out.println("Member successfully created");
+    }
+
     public void showEvent(int eventID){
         try {
             Event event = Event.eventList.get(eventID);
@@ -226,4 +242,5 @@ public class Member {
     public void setResponsible(boolean responsible) {
         isResponsible = responsible;
     }
+
 }
